@@ -1,0 +1,8 @@
+[profile training-dev]
+region = us-east-1
+output = json
+
+[profile training-prod]
+region = us-east-1
+output = json
+

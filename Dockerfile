@@ -19,14 +19,6 @@ WORKDIR /root/.bash
 RUN git clone https://github.com/jimeh/git-aware-prompt.git
 WORKDIR /
 
-# clone workshop
-WORKDIR /root
-RUN \
-    git clone https://github.com/ServerlessOpsIO/aws-serverless-workshops.git; \
-    cd aws-serverless-workshops; \
-    git submodule init
-WORKDIR /
-
 # AWS setup
 RUN mkdir /root/.aws
 WORKDIR /root/.aws
@@ -36,14 +28,19 @@ RUN aws configure set default.region us-east-1
 RUN aws configure set default.output json
 WORKDIR /
 
+# User setup
 WORKDIR /root
 ADD files/root_.profile .profile
 ADD files/root_.bashrc .bashrc
 WORKDIR /
 
 # startup
-WORKDIR /root
 ADD files/startup.sh /startup.sh
 RUN echo 'root:serverlessopstraining' | chpasswd
 RUN chmod +x /startup.sh
+
+RUN mkdir /workshop
+VOLUME /workshop
+WORKDIR /workshop
 ENTRYPOINT [ "/startup.sh" ]
+

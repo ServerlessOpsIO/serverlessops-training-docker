@@ -12,7 +12,6 @@ aws configure
 if [ ! -d "/workshop/.git"  ]; then
     echo "Cloning workshop from Github..."
     git clone https://github.com/ServerlessOpsIO/aws-serverless-workshops.git ./
-    cd aws-serverless-workshops
     git submodule init
 fi
 

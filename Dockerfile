@@ -9,6 +9,7 @@ RUN apk add --no-cache \
     groff \
     less \
     nano \
+    nano-syntax \
     vim
 RUN pip3 install awscli
 RUN npm install -g serverless serverless-python-requirements
@@ -32,6 +33,7 @@ WORKDIR /
 WORKDIR /root
 ADD files/root_.profile .profile
 ADD files/root_.bashrc .bashrc
+RUN find /usr/share/nano/ -iname "*.nanorc" -exec echo include {} \; >> .nanorc
 WORKDIR /
 
 # startup

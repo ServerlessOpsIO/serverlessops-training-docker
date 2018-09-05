@@ -12,7 +12,7 @@ RUN apk add --no-cache \
     nano-syntax \
     vim
 RUN pip3 install awscli
-RUN npm install -g serverless serverless-python-requirements
+RUN npm install -g serverless
 
 # Git setup
 RUN mkdir /root/.bash

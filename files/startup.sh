@@ -9,10 +9,10 @@ fi
 aws configure
 
 # optionally clone workshop if it was not provided as a volume argument.
-if [ ! -d "/workshop/.git"  ]; then
-    echo "Cloning workshop from Github..."
-    git clone https://github.com/ServerlessOpsIO/aws-serverless-workshops.git ./
-    git submodule init
-fi
+#if [ ! -d "/workshop/.git"  ]; then
+#    echo "Cloning workshop from Github..."
+#    git clone https://github.com/ServerlessOpsIO/aws-serverless-workshops.git ./
+#    git submodule init
+#fi
 
 exec bash -l

@@ -16,4 +16,5 @@ complete -C aws_completer aws
 # Set training environment
 goaws training-dev
 
-
+export WORKSHOP="/workshop"
+alias ws="cd ${WORKSHOP}"

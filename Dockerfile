@@ -33,6 +33,7 @@ WORKDIR /
 WORKDIR /root
 ADD files/root_.profile .profile
 ADD files/root_.bashrc .bashrc
+ADD files/root_.vimrc .vimrc
 RUN find /usr/share/nano/ -iname "*.nanorc" -exec echo include {} \; >> .nanorc
 WORKDIR /
 

@@ -4,6 +4,7 @@ RUN apk add --no-cache \
     nodejs \
     bash \
     bash-completion \
+    curl \
     git \
     git-bash-completion \
     groff \
